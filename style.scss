@@ -12,6 +12,13 @@
 
 .container {
   padding: 6.4rem 8rem;
+
+  @include maxWidth($md) {
+    padding: 6.4rem 3.6rem;
+  }
+  @include maxWidth($sm) {
+    padding: 4.6rem 2.4rem;
+  }
 }
 
 .home {
@@ -23,6 +30,21 @@
     padding: 12.8rem 20.8rem;
 
     @include dFlex($gap: 10.6rem);
+    @include maxWidth($ex) {
+      padding: 10rem 15rem;
+    }
+
+    @include maxWidth($lg) {
+      padding: 10rem 12rem;
+    }
+
+    @include maxWidth($md) {
+      @include dFlexCol(center, $gap: 3.6rem);
+    }
+
+    @include maxWidth($sm) {
+      padding: 12rem 2.4rem 6.4rem 2.4rem;
+    }
   }
 
   &__hero-col {
@@ -31,19 +53,48 @@
     flex: 1;
 
     @include dFlexCol(center, space-between, 3.2rem);
+
+    @include maxWidth($md) {
+      text-align: center;
+      align-items: center;
+    }
   }
 
   &__hero-heading {
     @include heading1;
+    @include maxWidth($md) {
+      width: 50rem;
+    }
+    @include maxWidth($sm) {
+      width: 100%;
+    }
   }
 
   &__hero-content {
     @include textBody;
+    @include maxWidth($md) {
+      width: 100%;
+    }
   }
 
   &__hero-input {
     @include dFlex;
     height: 5.2rem;
+    width: 100%;
+
+    @include maxWidth($md) {
+      display: none;
+    }
+  }
+
+  &__hero-input-mobile {
+    display: none;
+    height: 5.2rem;
+    width: 100%;
+
+    @include maxWidth($md) {
+      @include dFlex;
+    }
   }
 
   &__hero-input-email {
@@ -61,6 +112,15 @@
     width: 100%;
     flex: 1;
     @include dFlex;
+
+    @include maxWidth($md) {
+      @include dFlex(center, center, 6.2rem);
+    }
+
+    @include maxWidth($sm) {
+      padding: 0 2.4rem;
+      @include dFlex(space-between, center);
+    }
 
     &--blue {
       background-color: $blueColor;
@@ -88,22 +148,43 @@
 
   //   introduct
   &__introduct {
+    width: 100%;
     padding: 6.4rem 0;
     @include dFlexCol(space-between, $gap: 12.8rem);
+
+    @include maxWidth($md) {
+      gap: 6.4rem;
+    }
   }
 
   &__introduct-row {
+    width: 100%;
     @include dFlex;
 
     &:nth-child(even) {
       flex-direction: row-reverse;
+
+      @include maxWidth($sm) {
+        flex-direction: column;
+      }
+    }
+
+    @include maxWidth($sm) {
+      @include dFlexCol($align: start, $gap: 3.6rem);
     }
   }
 
   &__introduct-makers-col--left {
+    width: 50%;
     position: relative;
     padding: 0 13.1rem 0 18.8rem;
     @include dFlexCol($justify: left, $gap: 2.8rem);
+    @include maxWidth($lg) {
+      padding: 0 6rem;
+    }
+    @include maxWidth($sm) {
+      width: 100%;
+    }
   }
 
   &__introduct-makers-heading {
@@ -115,13 +196,37 @@
   }
 
   &__introduct-makers-col--right {
+    width: 50%;
     background-color: $blueColor;
     padding: 5.6rem 23.3rem 5.6rem 9.3rem;
     position: relative;
+
+    @include maxWidth($ex) {
+      padding: 5.6rem 9.3rem;
+    }
+
+    @include maxWidth($lg) {
+      height: 100%;
+    }
+
+    @include maxWidth($md) {
+      padding: 3.6rem 6.3rem;
+    }
+    @include maxWidth($sm) {
+      width: 100%;
+    }
+  }
+
+  &__introduct-makers-people {
+    width: 100%;
   }
 
   &__introduct-makers-people-position {
-    @include position($top: 30.6rem, $right: 53.1rem);
+    @include position($top: 65%, $left: 8.3rem);
+
+    @include maxWidth($md) {
+      width: 20%;
+    }
   }
 
   &__introduct-makers-line {
@@ -138,48 +243,112 @@
     &--purple-1 {
       width: 2rem;
       height: 0.8rem;
-      @include position($top: -7.2rem, $left: 21.5rem);
+      @include position($top: -7.2rem, $left: 30%);
+
+      @include maxWidth($md) {
+        @include position($top: -3.2rem, $left: 30%);
+      }
     }
 
     &--purple-2 {
       width: 5.8rem;
       height: 0.8rem;
       @include position($top: -7.2rem, $right: 8rem);
+
+      @include maxWidth($md) {
+        @include position($top: -3.2rem, $right: 8rem);
+      }
     }
 
     &--green-1 {
       width: 2.8rem;
       height: 0.8rem;
-      @include position($top: 14.2rem, $left: 7.9rem);
+      @include position($top: 25%, $left: 7.9rem);
+
+      @include maxWidth($md) {
+        @include position($top: 25%, $left: 6.9rem);
+      }
+
+      @include maxWidth($sm) {
+        @include position($top: 25%, $left: 5.4rem);
+      }
     }
 
     &--green-2 {
       width: 5.8rem;
       height: 0.8rem;
-      @include position($top: 25.9rem, $left: 44.7rem);
+      @include position($top: 50%, $left: 46rem);
+
+      @include maxWidth($ex) {
+        @include position($top: 50%, $left: 80%);
+      }
+
+      @include maxWidth($md) {
+        @include position($top: 50%, $left: 75%);
+      }
+
+      @include maxWidth($md) {
+        @include position($top: 50%, $left: 80%);
+      }
     }
 
     &--green-3 {
-      width: 2.8rem;
+      width: 5.8rem;
       height: 0.8rem;
-      @include position($top: 29.1rem, $left: 48.2rem);
+      @include position($top: 56%, $left: 50rem);
+
+      @include maxWidth($ex) {
+        @include position($top: 56%, $left: 85%);
+      }
+
+      @include maxWidth($md) {
+        @include position($top: 56%, $left: 83%);
+      }
+      @include maxWidth($md) {
+        @include position($top: 56%, $left: 85%);
+      }
     }
 
     &--green-4 {
       width: 8.8rem;
       height: 0.8rem;
-      @include position($top: 32.3rem, $left: 43.2rem);
+      @include position($top: 62%, $left: 44rem);
+
+      @include maxWidth($ex) {
+        @include position($top: 62%, $left: 78%);
+      }
+      @include maxWidth($md) {
+        @include position($top: 62%, $left: 73%);
+      }
+      @include maxWidth($md) {
+        @include position($top: 62%, $left: 78%);
+      }
     }
 
     &--green-5 {
       width: 5.8rem;
       height: 0.8rem;
       @include position($bottom: -7.2rem, $left: 13.7rem);
+      @include maxWidth($md) {
+        @include position($bottom: -5.2rem, $left: 13.7rem);
+      }
+      @include maxWidth($md) {
+        @include position($bottom: -1.2rem, $left: 13.7rem);
+      }
     }
   }
 
   &__introduct-origin-col--right {
+    width: 50%;
     position: relative;
+
+    @include maxWidth($md) {
+      width: 100%;
+    }
+  }
+
+  &__introduct-origin-img {
+    width: 100%;
   }
 
   &__introduct-origin-follow {
@@ -187,22 +356,46 @@
     background-color: $blueColor;
 
     @include dFlex($gap: 1.6rem);
-    @include position(absolute, 34rem, -3rem, 6rem, 42.2rem, 9999999);
+    @include position(absolute, 65%, -5%, auto, auto, 2);
     p {
       @include fontStyle(600, 3rem, 1.5, $whiteColor);
+      @include maxWidth($md) {
+        font-size: 1.5rem;
+      }
+    }
+
+    @include maxWidth($md) {
+      padding: 1.6rem;
+      img {
+        width: 2.4rem;
+      }
+    }
+
+    @include maxWidth($sm) {
+      @include position(absolute, 80%, 5%, auto, auto, 2);
     }
   }
 
   &__introduct-origin-col--left {
-    padding: 15.4rem 19.3rem 15.4rem 12.8rem;
+    width: 50%;
+    padding: 0 18.8rem 0 13.1rem;
     position: relative;
 
     @include dFlexCol($align: start, $gap: 3.2rem);
+    @include maxWidth($lg) {
+      padding: 0 6rem;
+    }
+    @include maxWidth($md) {
+      width: 100%;
+    }
   }
 
   &__introduct-origin-heading {
     width: 35.3rem;
     @include heading2;
+    @include maxWidth($md) {
+      width: 100%;
+    }
 
     &--blue {
       @include heading2($blueColor);
@@ -213,11 +406,18 @@
     height: 1.1rem;
     background-color: $greenColor;
 
-    @include position($left: 48.4rem, $top: 7.3rem, $zIndex: 99999999);
+    @include position($right: 18.8rem, $top: -7rem, $zIndex: 2);
+    @include maxWidth($md) {
+      @include position($right: 18.8rem, $top: -2rem, $zIndex: 2);
+    }
   }
   // BLOG
   &__blog {
+    position: relative;
     @include dFlexCol($align: space-between, $gap: 6.4rem);
+    @include maxWidth($sm) {
+      gap: 10.4rem;
+    }
   }
   &__blog-row {
     @include dFlexCol($align: space-between, $gap: 1.6rem);
@@ -232,21 +432,37 @@
 
     p {
       width: 50.9rem;
+
       @include textBody;
+      @include textOverflowEllipsis(2);
+    }
+
+    @include maxWidth($md) {
+      @include dFlex($gap: 20rem);
     }
   }
 
   &__blog-arrow {
-    cursor: pointer;
-    @include dFlex($gap: 3.2rem);
-
     &-left {
       width: 4.8rem;
       height: 4.8rem;
       background-color: $blueColor;
+      cursor: pointer;
       border-radius: 4.8rem;
+      transition: 0.3s;
 
+      &:hover {
+        background-color: $blueHoverColor;
+      }
+
+      &:active {
+        background-color: rgb(170, 170, 255);
+      }
       @include dFlex(center);
+      @include position($top: 12rem, $right: 15rem);
+      @include maxWidth($sm) {
+        @include position($top: 17rem, $left: 2.4rem);
+      }
     }
 
     &-right {
@@ -254,29 +470,75 @@
       height: 4.8rem;
       background-color: $blueColor;
       border-radius: 4.8rem;
+      cursor: pointer;
+      transition: 0.3s;
 
+      &:hover {
+        background-color: $blueHoverColor;
+      }
+
+      &:active {
+        background-color: rgb(170, 170, 255);
+      }
       @include dFlex(center);
+      @include position($top: 12rem, $right: 8rem);
+      @include maxWidth($sm) {
+        @include position($top: 17rem, $left: 10.4rem);
+      }
     }
   }
 
   &__blog-content {
     width: 100%;
+    position: static;
     @include dFlex($align: space-between, $gap: 1.6rem);
+  }
 
-    &-col {
-      width: 100%;
-      height: 29.5rem;
+  &__blog-content-col {
+    width: 100%;
+    height: 100%;
+    padding: 0 1.6rem;
+    @include dFlexCol($gap: 3.2rem);
 
-      @include dFlexCol($align: space-between);
+    &:nth-child(3n) {
+      padding-right: 0;
+    }
+
+    &:nth-child(3n + 1) {
+      padding-left: 0;
+    }
+
+    @include maxWidth($sm) {
+      &:nth-child(odd) {
+        padding-left: 0;
+        padding-right: 0.8rem;
+      }
+
+      &:nth-child(even) {
+        padding-right: 0;
+        padding-left: 0.8rem;
+      }
     }
   }
 
   &__blog-information {
+    width: 100%;
     @include dFlexCol($align: space-between, $gap: 1.6rem);
   }
 
   &__blog-avt {
     @include dFlex(start, $gap: 1.6rem);
+  }
+
+  &__blog-star {
+    @include dFlex(start);
+  }
+
+  &__blog-img {
+    @include maxWidth($md) {
+      width: 6rem;
+      height: 6rem;
+    }
   }
 
   &__blog-evaluate {
@@ -295,5 +557,16 @@
     width: 100%;
     height: 1.2rem;
     background-color: $blueColor;
+  }
+  .slick-track {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .slick-initialized .slick-slide {
+    display: flex;
+  }
+  .slick-slider {
+    position: none;
   }
 }

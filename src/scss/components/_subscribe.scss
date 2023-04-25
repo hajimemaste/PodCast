@@ -1,25 +1,45 @@
 .subscribe {
   padding: 0 8rem;
 
+  @include maxWidth($md) {
+    padding: 0 3.6rem;
+  }
+
+  @include maxWidth($md) {
+    padding: 0 2.4rem;
+  }
   &__container {
     background-color: $blueColor;
     position: relative;
     padding: 9.6rem 0;
     @include dFlexCol($gap: 3.2rem);
+
+    @include maxWidth($sm) {
+      padding: 7.6rem 1.6rem;
+      text-align: center;
+    }
   }
 
   &__heading {
     @include heading2($whiteColor);
+    // @include maxWidth($sm) {
+    //   padding: 0 6rem;
+    // }
   }
 
   &__input {
-    @include dFlex;
+    width: 100%;
+    @include dFlex(center);
   }
 
   &__input-email {
     width: 36.7rem;
     height: 4.8rem;
     padding-left: 1.6rem;
+
+    @include maxWidth($sm) {
+      width: 100%;
+    }
   }
 
   &__input-btn {
@@ -42,12 +62,20 @@
     transform: rotate(-15deg);
 
     @include dFlex(center);
-    @include position($top: 7.605rem, $left: 6.9rem);
+    @include position($top: 7.605rem, $left: 8%);
 
     svg {
       width: 3.2rem;
       height: 4.67rem;
       fill: $blackColor;
+    }
+
+    @include maxWidth($ex) {
+      width: 7.4rem;
+      height: 7.4rem;
+    }
+    @include maxWidth($md) {
+      display: none;
     }
   }
 
@@ -58,10 +86,20 @@
     border-radius: 3.3rem;
 
     @include dFlex(center);
-    @include position($bottom: 7.883rem, $right: 1.065rem);
+    @include position($bottom: 7.883rem, $right: 8%);
 
     p {
       @include textBody($whiteColor);
+    }
+
+    @include maxWidth($ex) {
+      width: 2.284rem;
+      height: 2.284rem;
+      @include position($bottom: 5.8rem, $right: 8%);
+
+      p {
+        font-size: 1.2rem;
+      }
     }
   }
 
@@ -80,6 +118,9 @@
       width: 1.648rem;
       height: 2.408rem;
       fill: $blackColor;
+    }
+    @include maxWidth($md) {
+      display: none;
     }
   }
 

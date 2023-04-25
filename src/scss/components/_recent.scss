@@ -1,0 +1,71 @@
+.recent {
+  @include dFlexCol($align: space-between, $gap: 6.4rem);
+  &__row {
+    @include dFlexCol($align: space-between, $gap: 1.6rem);
+  }
+
+  &__row-sub {
+    @include dFlex;
+  }
+
+  &__heading {
+    @include textOverflowEllipsis(2);
+    @include heading2;
+  }
+
+  &__sub {
+    width: 37.1rem;
+    @include textOverflowEllipsis(2);
+    @include textBody;
+  }
+
+  &__btn {
+    @include btnPrimary;
+  }
+
+  &__row-content {
+    @include dFlex($gap: 1.6rem);
+  }
+
+  &__row-content-item {
+    width: 100%;
+    @include dFlexCol($gap: 3.2rem);
+  }
+
+  &__item-img {
+    position: relative;
+  }
+
+  &__item-mic {
+    width: 4rem;
+    height: 4rem;
+    background-color: $blueColor;
+    border-radius: 4rem;
+    cursor: pointer;
+
+    @include dFlex(center);
+    @include position(absolute, 1.6rem, 1.6rem);
+
+    svg {
+      width: 1.4rem;
+      height: 2rem;
+      fill: $whiteColor;
+    }
+  }
+
+  &__item-content {
+    @include dFlexCol(start, start, $gap: 1.6rem);
+  }
+
+  &__item-content-heading {
+    @include heading3($fontWeight: 600);
+  }
+
+  &__item-content-sub {
+    @include textBody;
+  }
+
+  &__item-content-btntext {
+    @include btnText(0.8rem);
+  }
+}

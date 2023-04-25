@@ -1,0 +1,156 @@
+.header {
+  width: 100%;
+  height: $heightHeader;
+  background-color: $whiteColor;
+  padding: 0 8rem;
+
+  @include dFlex($gap: 3.2rem);
+  @include maxWidth($md) {
+    padding: 0 3.6rem;
+  }
+
+  @include maxWidth($sm) {
+    padding: 0 2.4rem;
+    @include position(fixed, 0, 0, $left: 0, $zIndex: 9);
+  }
+
+  &__menu {
+    @include dFlex(end);
+    list-style: none;
+    flex: 1;
+    height: 100%;
+
+    @include maxWidth($lg) {
+      flex: 0;
+    }
+
+    @include maxWidth($sm) {
+      display: none;
+    }
+  }
+
+  &__menu-items {
+    @include dFlex;
+  }
+
+  &__menu-item {
+    padding: 0 1.2rem;
+    height: 100%;
+    @include dFlex;
+
+    a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      background-color: $blackColor;
+      transition: 0.5s;
+      @include positionCenter($position: relative, $left: 50%, $x: -50%);
+    }
+
+    &:hover a::after {
+      width: 100%;
+    }
+  }
+
+  &__socical {
+    @include dFlex($gap: 1.6rem);
+
+    @include maxWidth($sm) {
+      display: none;
+    }
+  }
+
+  &__socical-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__menu-icon {
+    display: none;
+    width: 2.3rem;
+    height: 2.3rem;
+    fill: $blackColor;
+    cursor: pointer;
+
+    @include maxWidth($sm) {
+      display: block;
+    }
+  }
+
+  &__menu-mobile {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+
+    @include position(fixed, 0, 0, 0, 0);
+    @include maxWidth($sm) {
+      display: block;
+    }
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__menu-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    @include position(fixed, 0, 0, 0, 0);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+
+  &__menu-mobile.show &__menu-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__menu-mobile.show &__menu-dropdown {
+    transform: translateX(0);
+  }
+
+  &__menu-dropdown {
+    width: 32rem;
+    background-color: $whiteColor;
+    transition: 0.3s;
+
+    @include positionCenter(fixed, 0, 0, 0, auto, 99999999, $x: 100%, $y: 0);
+  }
+
+  &__menu-icon-mobile {
+    width: 100%;
+    height: $heightHeader;
+    fill: $blackColor;
+    cursor: pointer;
+    border-bottom: 1px solid $blackColor;
+    padding-right: 2.4rem;
+
+    @include dFlex($justify: end);
+  }
+
+  &__list-mobile {
+    width: 100%;
+    padding-top: 2.4rem;
+    padding-right: 2.4rem;
+    @include dFlexCol($justify: start, $align: end, $gap: 1.6rem);
+
+    li {
+      padding: 0;
+      @include heading5;
+    }
+  }
+
+  &__socical-mobile {
+    padding-top: 3.2rem;
+    padding-right: 2.4rem;
+    @include dFlex($justify: end, $gap: 1.6rem);
+  }
+}

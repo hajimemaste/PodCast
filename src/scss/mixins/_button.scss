@@ -1,0 +1,55 @@
+@mixin btnPrimary($bgrColor: $blueColor, $color: $whiteColor, $borderColor: $blueColor) {
+  @include dFlex(center);
+  @include heading5;
+  padding: 1.2rem 3.2rem;
+  border: 2px solid $borderColor;
+  background-color: $bgrColor;
+  color: $color;
+  transition: 0.3s;
+
+  &:hover {
+    border-color: $blueHoverColor;
+    background-color: $blueHoverColor;
+  }
+
+  @if $borderColor == $blackColor {
+    background-color: transparent;
+    color: $blackColor;
+    border-color: $blackColor;
+
+    &:hover {
+      border-color: $greenColor;
+      color: $greenColor;
+    }
+  }
+}
+
+@mixin btnText($gap: 0, $color: $blueColor, $bgrColor: $blueColor) {
+  @include dFlex(center, $gap: $gap);
+  @include heading5($color);
+  font-weight: 600;
+
+  .play-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: $color;
+    border-radius: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-left: 0.2rem;
+  }
+
+  &:hover {
+    color: $blueHoverColor;
+
+    .play-icon {
+      background-color: $blueHoverColor;
+    }
+  }
+}

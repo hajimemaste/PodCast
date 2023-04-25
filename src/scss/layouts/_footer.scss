@@ -1,0 +1,157 @@
+.footer {
+  width: 100%;
+  background-color: $whiteColor;
+  color: $whiteColor;
+  margin-top: 20rem;
+  position: relative;
+
+  @include dFlexCol;
+
+  &__oursponsors {
+    max-width: 1440px;
+    width: 100%;
+    padding: 6.4rem 8rem;
+    @include positionCenter($position: absolute, $left: 50%, $x: -50%, $y: 20%);
+    @include maxWidth($md) {
+      @include positionCenter($position: relative, $left: auto, $x: 0, $y: 0);
+    }
+
+    @include maxWidth($lg) {
+      @include position(relative);
+      transform: translate(0, 0);
+      padding: 0;
+    }
+  }
+
+  &__oursponsors-container {
+    background-color: $blueColor;
+    padding: 7.2rem 0;
+    @include dFlexCol($gap: 6.4rem);
+
+    @include maxWidth($lg) {
+      padding: 5.4rem 0;
+    }
+  }
+
+  &__oursponsors-heading {
+    @include heading2($color: $whiteColor);
+  }
+
+  &__oursponsors-logos {
+    @include dFlex($justify: center, $wrap: wrap);
+
+    a {
+      transition: 0.3s;
+      padding: 0 3.6rem;
+
+      img {
+        width: 18rem;
+      }
+
+      @include maxWidth($xl) {
+        padding: 1.6rem;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    background-color: $blackColor;
+    padding: 19.2rem 8rem 9.6rem;
+
+    @include dFlex($align: start);
+    @include maxWidth($md) {
+      @include dFlexCol($align: start, $gap: 1.6rem);
+      padding-top: 9.6rem;
+    }
+  }
+
+  &__content-logo {
+    img {
+      width: 20rem;
+    }
+  }
+
+  &__content-col {
+    @include dFlexCol(start, $align: start, $gap: 3.2rem);
+    @include maxWidth($md) {
+      width: 100%;
+    }
+  }
+
+  &__content-heading {
+    @include heading4($color: $whiteColor, $lineHeight: 1.5);
+  }
+
+  &__content-item {
+    @include dFlexCol($align: start, $gap: 1.6rem);
+    @include maxWidth($md) {
+      width: 100%;
+    }
+
+    a {
+      @include textBody($color: $whiteColor);
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background-color: $whiteColor;
+        transition: 0.5s;
+        @include positionCenter($position: relative, $left: 50%, $x: -50%);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__content-sub-item {
+    @include dFlexCol($gap: 3.2rem);
+    transition: 0.7s;
+
+    @include maxWidth($md) {
+      display: none;
+    }
+
+    a {
+      width: 100%;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__content-sub-item-mobile {
+    display: none;
+
+    @include maxWidth($md) {
+      display: block;
+      @include dFlex($gap: 3.2rem);
+    }
+
+    a {
+      width: 100%;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__end {
+    width: 100%;
+    padding: 2rem 0;
+    background-color: $blueColor;
+
+    @include dFlex($justify: center);
+    @include heading5($color: $whiteColor);
+  }
+}

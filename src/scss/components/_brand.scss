@@ -1,0 +1,9 @@
+.brand {
+  width: 100%;
+
+  @include dFlex;
+
+  &__heading {
+    @include fontStyle(600, 2.4rem, 1.5, $blackColor);
+  }
+}

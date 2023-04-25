@@ -1,0 +1,101 @@
+.subscribe {
+  padding: 0 8rem;
+
+  &__container {
+    background-color: $blueColor;
+    position: relative;
+    padding: 9.6rem 0;
+    @include dFlexCol($gap: 3.2rem);
+  }
+
+  &__heading {
+    @include heading2($whiteColor);
+  }
+
+  &__input {
+    @include dFlex;
+  }
+
+  &__input-email {
+    width: 36.7rem;
+    height: 4.8rem;
+    padding-left: 1.6rem;
+  }
+
+  &__input-btn {
+    @include btnPrimary($greenColor, $blackColor);
+
+    border: 0;
+  }
+  &__bgr {
+    fill: #ffffff41;
+
+    @include position($bottom: 0rem, $zIndex: 99999);
+  }
+
+  &__mic-left {
+    background-color: $whiteColor;
+    width: 9.4rem;
+    height: 9.4rem;
+    border-radius: 9.4rem;
+    position: relative;
+    transform: rotate(-15deg);
+
+    @include dFlex(center);
+    @include position($top: 7.605rem, $left: 6.9rem);
+
+    svg {
+      width: 3.2rem;
+      height: 4.67rem;
+      fill: $blackColor;
+    }
+  }
+
+  &__turn-left {
+    width: 3.284rem;
+    height: 3.284rem;
+    background-color: $greenColor;
+    border-radius: 3.3rem;
+
+    @include dFlex(center);
+    @include position($bottom: 7.883rem, $right: 1.065rem);
+
+    p {
+      @include textBody($whiteColor);
+    }
+  }
+
+  &__mic-right {
+    background-color: $whiteColor;
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 9.4rem;
+    position: relative;
+    transform: rotate(14deg);
+
+    @include dFlex(center);
+    @include position($top: 18.616rem, $right: 9.8rem);
+
+    svg {
+      width: 1.648rem;
+      height: 2.408rem;
+      fill: $blackColor;
+    }
+  }
+
+  &__turn-right {
+    width: 1.694rem;
+    height: 1.694rem;
+    background-color: $greenColor;
+    border-radius: 3.3rem;
+
+    @include dFlex(center);
+    @include position($bottom: 3.37rem, $left: 3rem);
+
+    p {
+      @include textBody($whiteColor);
+
+      font-size: 0.8rem;
+    }
+  }
+}

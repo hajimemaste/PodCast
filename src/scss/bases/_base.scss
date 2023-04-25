@@ -1,0 +1,58 @@
+@import '../variables/colors';
+
+@import '../mixins/button';
+@import '../mixins/typo';
+@import '../mixins/display';
+@import '../mixins/reponsive';
+@import '../mixins/position';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+
+  @include maxWidth($lg) {
+    font-size: 56.25%;
+  }
+
+  @include maxWidth($md) {
+    font-size: 50%;
+  }
+}
+
+body {
+  @include textBody;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a,
+button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+}
+
+a,
+button,
+input {
+  border: 0;
+  outline: 0;
+  color: inherit;
+}

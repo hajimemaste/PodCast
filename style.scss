@@ -1,0 +1,299 @@
+// sass style.scss style.css --watch
+
+@import './src/scss/bases/base';
+
+@import './src/scss/layouts/main';
+@import './src/scss/layouts/header';
+@import './src/scss/layouts/footer';
+@import './src/scss/components/brand';
+@import './src/scss/components/recent';
+@import './src/scss/components/subscribe';
+@import './src/scss/components/news';
+
+.container {
+  padding: 6.4rem 8rem;
+}
+
+.home {
+  background-color: $whiteColor;
+
+  //   Hero
+  &__hero {
+    width: 100%;
+    padding: 12.8rem 20.8rem;
+
+    @include dFlex($gap: 10.6rem);
+  }
+
+  &__hero-col {
+    text-align: left;
+    width: 100%;
+    flex: 1;
+
+    @include dFlexCol(center, space-between, 3.2rem);
+  }
+
+  &__hero-heading {
+    @include heading1;
+  }
+
+  &__hero-content {
+    @include textBody;
+  }
+
+  &__hero-input {
+    @include dFlex;
+    height: 5.2rem;
+  }
+
+  &__hero-input-email {
+    width: 100%;
+    height: 100%;
+    padding-left: 1.6rem;
+    background-color: $offWhiteColor;
+  }
+
+  &__hero-btn {
+    @include btnPrimary;
+  }
+
+  &__hero-line {
+    width: 100%;
+    flex: 1;
+    @include dFlex;
+
+    &--blue {
+      background-color: $blueColor;
+    }
+
+    &--green {
+      background-color: $greenColor;
+    }
+
+    .small {
+      height: 9.9rem;
+      width: 3.2rem;
+    }
+
+    .medium {
+      height: 17.8rem;
+      width: 3.2rem;
+    }
+
+    .big {
+      height: 25.6rem;
+      width: 3.2rem;
+    }
+  }
+
+  //   introduct
+  &__introduct {
+    padding: 6.4rem 0;
+    @include dFlexCol(space-between, $gap: 12.8rem);
+  }
+
+  &__introduct-row {
+    @include dFlex;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__introduct-makers-col--left {
+    position: relative;
+    padding: 0 13.1rem 0 18.8rem;
+    @include dFlexCol($justify: left, $gap: 2.8rem);
+  }
+
+  &__introduct-makers-heading {
+    @include heading2;
+  }
+
+  &__introduct-makers-sub {
+    @include textBody;
+  }
+
+  &__introduct-makers-col--right {
+    background-color: $blueColor;
+    padding: 5.6rem 23.3rem 5.6rem 9.3rem;
+    position: relative;
+  }
+
+  &__introduct-makers-people-position {
+    @include position($top: 30.6rem, $right: 53.1rem);
+  }
+
+  &__introduct-makers-line {
+    @include position(absolute, 0, 0, 0, 0, 9999);
+
+    .purple {
+      background-color: $purpleColor;
+    }
+
+    .green {
+      background-color: $greenColor;
+    }
+
+    &--purple-1 {
+      width: 2rem;
+      height: 0.8rem;
+      @include position($top: -7.2rem, $left: 21.5rem);
+    }
+
+    &--purple-2 {
+      width: 5.8rem;
+      height: 0.8rem;
+      @include position($top: -7.2rem, $right: 8rem);
+    }
+
+    &--green-1 {
+      width: 2.8rem;
+      height: 0.8rem;
+      @include position($top: 14.2rem, $left: 7.9rem);
+    }
+
+    &--green-2 {
+      width: 5.8rem;
+      height: 0.8rem;
+      @include position($top: 25.9rem, $left: 44.7rem);
+    }
+
+    &--green-3 {
+      width: 2.8rem;
+      height: 0.8rem;
+      @include position($top: 29.1rem, $left: 48.2rem);
+    }
+
+    &--green-4 {
+      width: 8.8rem;
+      height: 0.8rem;
+      @include position($top: 32.3rem, $left: 43.2rem);
+    }
+
+    &--green-5 {
+      width: 5.8rem;
+      height: 0.8rem;
+      @include position($bottom: -7.2rem, $left: 13.7rem);
+    }
+  }
+
+  &__introduct-origin-col--right {
+    position: relative;
+  }
+
+  &__introduct-origin-follow {
+    padding: 3.2rem;
+    background-color: $blueColor;
+
+    @include dFlex($gap: 1.6rem);
+    @include position(absolute, 34rem, -3rem, 6rem, 42.2rem, 9999999);
+    p {
+      @include fontStyle(600, 3rem, 1.5, $whiteColor);
+    }
+  }
+
+  &__introduct-origin-col--left {
+    padding: 15.4rem 19.3rem 15.4rem 12.8rem;
+    position: relative;
+
+    @include dFlexCol($align: start, $gap: 3.2rem);
+  }
+
+  &__introduct-origin-heading {
+    width: 35.3rem;
+    @include heading2;
+
+    &--blue {
+      @include heading2($blueColor);
+    }
+  }
+  &__introduct-origin-line--green {
+    width: 5.8rem;
+    height: 1.1rem;
+    background-color: $greenColor;
+
+    @include position($left: 48.4rem, $top: 7.3rem, $zIndex: 99999999);
+  }
+  // BLOG
+  &__blog {
+    @include dFlexCol($align: space-between, $gap: 6.4rem);
+  }
+  &__blog-row {
+    @include dFlexCol($align: space-between, $gap: 1.6rem);
+  }
+
+  &__blog-heading {
+    @include heading2;
+  }
+
+  &__blog-sub {
+    @include dFlex;
+
+    p {
+      width: 50.9rem;
+      @include textBody;
+    }
+  }
+
+  &__blog-arrow {
+    cursor: pointer;
+    @include dFlex($gap: 3.2rem);
+
+    &-left {
+      width: 4.8rem;
+      height: 4.8rem;
+      background-color: $blueColor;
+      border-radius: 4.8rem;
+
+      @include dFlex(center);
+    }
+
+    &-right {
+      width: 4.8rem;
+      height: 4.8rem;
+      background-color: $blueColor;
+      border-radius: 4.8rem;
+
+      @include dFlex(center);
+    }
+  }
+
+  &__blog-content {
+    width: 100%;
+    @include dFlex($align: space-between, $gap: 1.6rem);
+
+    &-col {
+      width: 100%;
+      height: 29.5rem;
+
+      @include dFlexCol($align: space-between);
+    }
+  }
+
+  &__blog-information {
+    @include dFlexCol($align: space-between, $gap: 1.6rem);
+  }
+
+  &__blog-avt {
+    @include dFlex(start, $gap: 1.6rem);
+  }
+
+  &__blog-evaluate {
+    @include dFlexCol($gap: 0.8rem, $align: space-between);
+  }
+
+  &__blog-name {
+    @include heading5($fontWeight: 500);
+  }
+
+  &__blog-content-sub {
+    @include textBody;
+  }
+
+  &__blog-line {
+    width: 100%;
+    height: 1.2rem;
+    background-color: $blueColor;
+  }
+}

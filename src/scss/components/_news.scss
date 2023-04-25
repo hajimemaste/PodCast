@@ -1,0 +1,48 @@
+.news {
+  @include dFlex($align: none, $gap: 1.6rem);
+
+  &__card {
+    width: 100%;
+    @include dFlexCol($align: start, $gap: 3.2rem);
+
+    &:nth-child(1) {
+      padding: 4rem;
+      background-color: $offWhiteColor;
+      position: relative;
+      overflow: hidden;
+      @include dFlexCol(start, start, $gap: 1.6rem);
+    }
+  }
+
+  &__heading {
+    @include heading2;
+  }
+
+  &__btn {
+    @include btnText;
+  }
+
+  &__line {
+    transform: rotate(45deg);
+    @include dFlex($gap: 9rem);
+    @include position($top: 10rem, $left: -1rem, $zIndex: 1);
+  }
+
+  &__line--purple-1 {
+    width: 7rem;
+    height: 23rem;
+    background-color: $blueColor;
+  }
+
+  &__line--purple-2 {
+    width: 7rem;
+    height: 42rem;
+    background-color: $blueColor;
+  }
+
+  &__line--green-1 {
+    width: 7rem;
+    height: 61rem;
+    background-color: $greenColor;
+  }
+}

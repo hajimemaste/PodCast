@@ -1,21 +1,38 @@
 .news {
-  @include dFlex($align: none, $gap: 1.6rem);
+  @include dFlex($align: space-between, $gap: 1.6rem);
+
+  @include maxWidth($sm) {
+    @include dFlexCol($gap: 2.4rem);
+  }
 
   &__card {
     width: 100%;
-    @include dFlexCol($align: start, $gap: 3.2rem);
+    @include dFlexCol(start, $align: start, $gap: 3.2rem);
+
+    img {
+      width: 100%;
+    }
 
     &:nth-child(1) {
+      width: 100%;
       padding: 4rem;
       background-color: $offWhiteColor;
       position: relative;
       overflow: hidden;
       @include dFlexCol(start, start, $gap: 1.6rem);
+
+      @include maxWidth($ex) {
+        padding: 2rem;
+      }
     }
   }
 
   &__heading {
+    width: 25rem;
     @include heading2;
+    @include maxWidth($sm) {
+      width: 100%;
+    }
   }
 
   &__btn {
@@ -26,6 +43,10 @@
     transform: rotate(45deg);
     @include dFlex($gap: 9rem);
     @include position($top: 10rem, $left: -1rem, $zIndex: 1);
+
+    @include maxWidth($sm) {
+      display: none;
+    }
   }
 
   &__line--purple-1 {
@@ -44,5 +65,14 @@
     width: 7rem;
     height: 61rem;
     background-color: $greenColor;
+  }
+
+  &__content {
+    height: 100%;
+    @include dFlexCol($align: start, $gap: 1.6rem);
+  }
+
+  &__content-heading {
+    @include textOverflowEllipsis(2);
   }
 }

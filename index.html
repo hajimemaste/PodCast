@@ -5,6 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./src/public/imgs/facvicon.png" />
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Podcasts</title>
   </head>
@@ -112,14 +125,20 @@
           <div class="home__hero-line--blue big"></div>
           <div class="home__hero-line--green medium"></div>
         </div>
+        <div class="home__hero-input-mobile">
+          <input type="email" class="home__hero-input-email" placeholder="Enter Your Email Id" />
+          <button class="home__hero-btn">Subscribe</button>
+        </div>
       </section>
       <!-- Brand -->
       <section class="brand container">
         <h3 class="brand__heading">Podcast Available On</h3>
-        <a href="#!"><img src="./src/public/svgs/apple-black.svg" alt="" /></a>
-        <a href="#!"><img src="./src/public/svgs/sound-black.svg" alt="" /></a>
-        <a href="#!"><img src="./src/public/svgs/google-black.svg" alt="" /></a>
-        <a href="#!"><img src="./src/public/svgs/spotify-black.svg" alt="" /></a>
+        <div class="brand__img">
+          <a href="#!"><img src="./src/public/svgs/apple-black.svg" alt="" /></a>
+          <a href="#!"><img src="./src/public/svgs/sound-black.svg" alt="" /></a>
+          <a href="#!"><img src="./src/public/svgs/google-black.svg" alt="" /></a>
+          <a href="#!"><img src="./src/public/svgs/spotify-black.svg" alt="" /></a>
+        </div>
       </section>
       <!-- introduct -->
       <section class="home__introduct">
@@ -169,10 +188,14 @@
             <div class="home__introduct-origin-line--green"></div>
           </div>
           <div class="home__introduct-origin-col--right">
-            <img src="./src/public/imgs/origin-people.png" alt="" />
+            <img
+              src="./src/public/imgs/origin-people.png"
+              alt=""
+              class="home__introduct-origin-img"
+            />
             <div class="home__introduct-origin-follow">
               <img src="./src/public/svgs/youtube-icon.svg" alt="" />
-              <p>350+ Videos</p>
+              <p>350+Videos</p>
             </div>
           </div>
         </div>
@@ -276,14 +299,6 @@
               viverra suspendisse ornare. Sit volutpat, volutpat ut netus malesuada enim penatibus
               non aliquet.
             </p>
-            <div class="home__blog-arrow">
-              <div class="home__blog-arrow-left">
-                <img src="./src/public/svgs/arrow-left.svg" alt="" />
-              </div>
-              <div class="home__blog-arrow-right">
-                <img src="./src/public/svgs/arrow-right.svg" alt="" />
-              </div>
-            </div>
           </div>
         </div>
         <div class="home__blog-content">
@@ -355,8 +370,349 @@
             </div>
             <div class="home__blog-line"></div>
           </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-1.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Eve Madien</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-2.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ash Benfred</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-3.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ryan Smith</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-1.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Eve Madien</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-2.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ash Benfred</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-3.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ryan Smith</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-1.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Eve Madien</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-2.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ash Benfred</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-3.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ryan Smith</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-1.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Eve Madien</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-2.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ash Benfred</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-3.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ryan Smith</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-1.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Eve Madien</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-2.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ash Benfred</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
+          <div class="home__blog-content-col">
+            <div class="home__blog-information">
+              <div class="home__blog-avt">
+                <img src="./src/public/imgs/blog-people-3.png" alt="" class="home__blog-img" />
+                <div class="home__blog-evaluate">
+                  <p class="home__blog-name">Ryan Smith</p>
+                  <div class="home__blog-star">
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                    <img src="./src/public/svgs/star-icon.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <p class="home__blog-content-sub">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem eget condimentum enim
+                libero ultricies amet odio fringilla. Ut nibh morbi augue porta aliquet commodo.
+                Fermentum auctor lacus eget in ut integer viverra sed. Penatibus tortor consequat.
+              </p>
+            </div>
+            <div class="home__blog-line"></div>
+          </div>
         </div>
       </section>
+
       <!-- Subscribe -->
       <section class="subscribe">
         <div class="subscribe__container">
@@ -389,10 +745,7 @@
       <!-- Nems -->
       <section class="news container">
         <div class="news__card">
-          <h2 class="news__heading">
-            Read our <br />
-            articles & news
-          </h2>
+          <h2 class="news__heading">Read our articles & news</h2>
           <button class="news__btn">See More</button>
           <div class="news__line">
             <div class="news__line--purple-1"></div>
@@ -407,8 +760,8 @@
             <p class="news__content-sub">
               Lorem ipsum at vero eos et accusam et justo duo dolores et ea rebum.
             </p>
-            <button class="news__btn">Read Now</button>
           </div>
+          <button class="news__btn">Read Now</button>
         </div>
         <div class="news__card">
           <img src="./src/public/imgs/news-2.png" alt="" />
@@ -419,8 +772,8 @@
             <p class="news__content-sub">
               Lorem ipsum at vero eos et accusam et justo duo dolores et ea rebum.
             </p>
-            <button class="news__btn">Read Now</button>
           </div>
+          <button class="news__btn">Read Now</button>
         </div>
       </section>
     </main>
@@ -489,6 +842,12 @@
       </div>
       <p class="footer__end">© Copyright Finsweet 2021</p>
     </footer>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
 
     <script src="./src/javascripts/app.js"></script>
   </body>

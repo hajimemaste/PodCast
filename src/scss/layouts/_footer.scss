@@ -6,7 +6,9 @@
   position: relative;
 
   @include dFlexCol;
-
+  @include maxWidth($lg) {
+    margin-top: 0;
+  }
   &__oursponsors {
     max-width: 1440px;
     width: 100%;
@@ -14,6 +16,10 @@
     @include positionCenter($position: absolute, $left: 50%, $x: -50%, $y: 20%);
     @include maxWidth($md) {
       @include positionCenter($position: relative, $left: auto, $x: 0, $y: 0);
+    }
+
+    @include maxWidth($ex) {
+      padding: 4.4rem 6rem;
     }
 
     @include maxWidth($lg) {
@@ -30,6 +36,9 @@
 
     @include maxWidth($lg) {
       padding: 5.4rem 0;
+    }
+    @include maxWidth($xl) {
+      padding: 5.4rem 0rem;
     }
   }
 
@@ -114,14 +123,13 @@
 
   &__content-sub-item {
     @include dFlexCol($gap: 3.2rem);
-    transition: 0.7s;
-
     @include maxWidth($md) {
       display: none;
     }
 
     a {
       width: 100%;
+      transition: 0.3s;
 
       &:hover {
         transform: scale(1.2);

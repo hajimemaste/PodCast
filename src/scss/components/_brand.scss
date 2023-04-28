@@ -1,9 +1,36 @@
 .brand {
-  width: 100%;
-
-  @include dFlex;
+  @include dFlex(center, $gap: 8.6rem);
 
   &__heading {
     @include fontStyle(600, 2.4rem, 1.5, $blackColor);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  @include maxWidth($lg) {
+    gap: 2.4rem;
+  }
+
+  @include maxWidth($md) {
+    @include dFlexCol($align: start, $gap: 3.6rem);
+  }
+
+  @include maxWidth($sm) {
+    display: none;
+  }
+
+  &__img {
+    @include dFlex($gap: 8rem);
+
+    @include maxWidth($md) {
+      gap: 3.6rem;
+    }
+
+    @include maxWidth($sm) {
+      align-self: center;
+      @include dFlexCol($align: start, $gap: 2.4rem);
+    }
   }
 }

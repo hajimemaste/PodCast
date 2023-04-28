@@ -18,6 +18,19 @@
     border-color: $blackColor;
 
     &:hover {
+      background-color: transparent;
+      border-color: $greenColor;
+      color: $greenColor;
+    }
+  }
+
+  @if $borderColor == $offWhiteColor {
+    background-color: transparent;
+    color: $offWhiteColor;
+    border-color: $offWhiteColor;
+
+    &:hover {
+      background-color: transparent;
       border-color: $greenColor;
       color: $greenColor;
     }

@@ -6,6 +6,8 @@
 @import '../../scss/layouts/header';
 @import '../../scss/layouts/footer';
 @import '../../scss/components/brand';
+@import '../../scss/components/cta';
+@import '../../scss/components/recent';
 
 .container {
   padding: 6.4rem 8rem;
@@ -29,10 +31,17 @@
     position: relative;
 
     @include dFlex($justify: center, $gap: 1.6rem);
+    @include maxWidth($md) {
+      flex-direction: column;
+      padding: 4.6rem 2.4rem;
+    }
   }
 
   &__hero-col--left {
     transform: translateY(4rem);
+    @include maxWidth($sm) {
+      width: 50%;
+    }
   }
 
   &__hero-col--right {
@@ -50,11 +59,19 @@
   &__hero-heading {
     width: 36.8rem;
     @include heading2;
+
+    @include maxWidth($md) {
+      width: 100%;
+    }
   }
 
   &__hero-sub {
     width: 40rem;
     @include textBody;
+
+    @include maxWidth($md) {
+      width: 100%;
+    }
   }
 
   &__hero-btn {
@@ -75,6 +92,10 @@
     background-color: $greenColor;
 
     @include position($bottom: 16.6rem, $left: 10rem);
+
+    @include maxWidth($lg) {
+      display: none;
+    }
   }
 
   &__hero-line--green-2 {
@@ -91,6 +112,13 @@
     width: 100%;
 
     @include dFlex($gap: 12.8rem);
+    @include maxWidth($md) {
+      gap: 6.4rem;
+    }
+
+    @include maxWidth($sm) {
+      flex-direction: column;
+    }
   }
 
   &__dream-col--left {
@@ -118,6 +146,10 @@
     background-color: $purpleColor;
 
     @include position($bottom: -0.4rem, $right: -5.8rem);
+    @include maxWidth($md) {
+      bottom: -3.2rem;
+      right: -1.2rem;
+    }
   }
 
   &__dream-col--right {
@@ -131,6 +163,18 @@
 
   &__dream-wave {
     @include position($left: -6.4rem, $bottom: -2rem);
+    @include maxWidth($lg) {
+      width: 70%;
+    }
+
+    @include maxWidth($md) {
+      left: -3.2rem;
+    }
+
+    @include maxWidth($sm) {
+      bottom: 0;
+      left: 0;
+    }
   }
 
   // ORIGIN
@@ -141,7 +185,121 @@
 
   &__origin-container {
     padding: 0 10.9rem 0 13.4rem;
+    position: relative;
 
-    @include dFlex($gap: 6.4rem);
+    @include dFlex($align: start, $gap: 6.4rem);
+
+    @include maxWidth($lg) {
+      padding: 0;
+    }
+
+    @include maxWidth($md) {
+      flex-direction: column;
+    }
+  }
+
+  &__origin-col {
+    @include dFlexCol(start, start, 3.2rem);
+  }
+
+  &__origin-heading {
+    width: 36rem;
+    @include heading2;
+  }
+
+  &__origin-sub {
+    @include dFlexCol($align: start, $gap: 3.2rem);
+    p {
+      @include textBody;
+    }
+
+    span {
+      @include fontStyle($fontSize: 1.6rem, $lineHeight: 1.5, $textColor: $blackColor);
+    }
+  }
+  &__origin-line--purple-1 {
+    width: 2rem;
+    height: 0.8rem;
+    background-color: $purpleColor;
+
+    @include position($left: 13.4rem, $bottom: 0);
+    @include maxWidth($md) {
+      bottom: -1.2rem;
+    }
+  }
+
+  &__origin-line--purple-2 {
+    width: 5.8rem;
+    height: 0.8rem;
+    background-color: $purpleColor;
+
+    @include position($right: 0, $bottom: 0);
+    @include maxWidth($md) {
+      bottom: -1.2rem;
+    }
+  }
+
+  // Achievements
+  &__achievements {
+    width: 100%;
+    margin-top: 9.6rem;
+
+    @include dFlex($gap: 1.6rem);
+
+    @include maxWidth($lg) {
+      flex-wrap: wrap;
+    }
+
+    @include maxWidth($sm) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+  }
+
+  &__achievements-item {
+    padding: 6.4rem 4rem;
+    background-color: $blueColor;
+
+    @include dFlexCol($gap: 9.6rem);
+
+    &:nth-child(even) {
+      transform: translateY(-9.6rem);
+
+      @include maxWidth($sm) {
+        transform: translateY(0);
+      }
+    }
+
+    @include maxWidth($ex) {
+      padding: 5.4rem 2.4rem;
+    }
+
+    @include maxWidth($lg) {
+      flex-basis: 48%;
+    }
+
+    @include maxWidth($sm) {
+      width: 100%;
+    }
+  }
+
+  &__achievements-content {
+    width: 20rem;
+    @include dFlexCol($align: start, $gap: 1.6rem);
+    @include maxWidth($sm) {
+      text-align: center;
+    }
+  }
+
+  &__achievements-heading {
+    width: 100%;
+
+    @include fontStyle($lineHeight: 1.2, $textColor: $offWhiteColor);
+  }
+
+  &__achievements-sub {
+    width: 100%;
+
+    @include heading2($offWhiteColor);
   }
 }

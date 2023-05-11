@@ -1,0 +1,39 @@
+.cta {
+  width: 100%;
+  position: relative;
+  background: url(../../public/imgs/cta-img.png) center/cover;
+
+  &__container {
+    width: 44rem;
+    margin: 6.4rem auto 6.4rem 12.8rem;
+
+    @include dFlexCol($align: start, $gap: 3.2rem);
+    @include maxWidth($md) {
+      margin: 0;
+    }
+
+    @include maxWidth($sm) {
+      width: 100%;
+    }
+  }
+
+  &__heading {
+    @include heading1($offWhiteColor);
+  }
+
+  &__sub {
+    @include textBody($offWhiteColor);
+  }
+
+  &__btn {
+    @include btnPrimary($borderColor: $offWhiteColor);
+  }
+
+  &__pulse {
+    background-color: $blueColor;
+    padding: 1.6rem 3.2rem;
+    width: 40%;
+
+    @include position($bottom: 0, $right: 0);
+  }
+}

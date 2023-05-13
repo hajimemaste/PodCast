@@ -21,6 +21,9 @@
     width: 37.1rem;
     @include textOverflowEllipsis(2);
     @include textBody;
+    @include maxWidth($sm) {
+      width: 100%;
+    }
   }
 
   &__btn {
